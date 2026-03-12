@@ -3,21 +3,28 @@ pipeline {
 
     stages {
 
+        stage('Checkout') {
+            steps {
+                echo 'Descargando el código del repositorio...'
+                checkout scm
+            }
+        }
+
         stage('Build') {
             steps {
-                echo 'Construyendo el proyecto'
+                echo 'Construyendo el proyecto...'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Ejecutando pruebas'
+                echo 'Ejecutando pruebas del proyecto...'
             }
         }
 
-        stage('Deploy') {
+        stage('Deploy Simulation') {
             steps {
-                echo 'Desplegando aplicación'
+                echo 'Simulando despliegue de la aplicación...'
             }
         }
 
